@@ -177,9 +177,9 @@ class PlayList {
             int min = this.tracks[start].getDuration();
             int index = start;
             for(int i = start + 1; i < this.size; i++){
-                if(min > this.tracks[start].getDuration()){
+                if(min > this.tracks[i].getDuration()){
                     index = i;
-                    min = this.tracks[start].getDuration();
+                    min = this.tracks[i].getDuration();
                 }
             }
             return index;
