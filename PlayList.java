@@ -76,6 +76,7 @@ class PlayList {
      *  If such a track is not found, returns -1. */
     public int indexOf(String title) {
         for(int i = 0; i < this.size; i++){
+            // #feedback - you should ignore upper/lower case.
             if(this.tracks[i].getTitle().equals(title)){
                 return i;
             }
@@ -104,7 +105,7 @@ class PlayList {
         
     }
     // shifts all the elements of the tracks array one position to the right
-    public void shiftAdd(int place){
+    public void shiftAdd(int place){ // #feedback - this helper mathod should be provate as it is not part of the API.
 
         for(int i = this.size; i > place; i--){
             this.tracks[i] = this.tracks[i-1];
@@ -133,6 +134,7 @@ class PlayList {
      *  is negative or too big for this list, does nothing. */
 
     public void remove(String title) {
+        // #feedback - you can call indexOf method to get the index.
         //check if the title in this list and save its index
         int index = -1; // -1 is a number that cant be on the list
         // therfore, if after the loop ends the index = -999 the title is not in the list
